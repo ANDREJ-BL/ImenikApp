@@ -1,7 +1,7 @@
 <div class="kontakt">
     <input type="text" [(ngModel)]="kontakt.ime" placeholder="Ime" class="input-field">
     <input type="tel" [(ngModel)]="kontakt.brojTelefona" placeholder="Broj telefona" class="input-field">
-    <button (click)="snimi()" class="save-btn">Sačuvaj</button>
+    <button (click)="snimi()" class="save-btn" [disabled]="!kontakt.ime.trim() || !kontakt.brojTelefona.trim()">Sačuvaj</button>
 </div>
 
 <div class="table">
