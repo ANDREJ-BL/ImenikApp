@@ -1,0 +1,24 @@
+<div class="kontakt">
+    <input type="text" [(ngModel)]="kontakt.ime" placeholder="Ime" class="input-field">
+    <input type="tel" [(ngModel)]="kontakt.brojTelefona" placeholder="Broj telefona" class="input-field">
+    <button (click)="snimi()" class="save-btn">Sačuvaj</button>
+</div>
+
+<div class="table">
+    <table>
+        <thead>
+            <tr>
+                <th>Ime</th>
+                <th>Broj Telefona</th>
+                <th>Obrisi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let kontakt of kontakti; let i = index">
+                <td>{{ kontakt.ime }}</td>
+                <td>{{ kontakt.brojTelefona }}</td>
+                <td><button (click)="obrisi(i)" class="delete-btn">Obriši</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
